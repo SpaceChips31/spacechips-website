@@ -16,6 +16,24 @@ body {
   position: relative;
 }
 
+.about-footer {
+  text-align: center;
+  margin-top: 2em;
+  font-size: 0.8em;
+  opacity: 0.6;
+}
+
+.about-footer a {
+  color: #00ffe5;
+  text-decoration: none;
+}
+
+.about-footer a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+
 .grid {
   position: fixed;
   inset: 0;
