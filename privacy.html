@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <title>Privacy Policy - spacechips.it</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/assets/css/home-style.css" />
+</head>
+<body>
+
+  <canvas id="glitch-canvas"></canvas>
+
+  <div class="hud-container collapsed">
+    <aside class="sidebar collapsed">
+      <header>
+        <h1>spacechips@home</h1>
+      </header>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/about-me">About Me</a>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <section class="hud-box">
+        <h2>Privacy Policy</h2>
+
+        <p>Questa informativa si applica al sito <strong>spacechips.it</strong> e a tutti i suoi sottodomini, inclusi ma non limitati a <strong>tutorials.spacechips.it</strong>.</p>
+
+        <h3>1. Tipologia di dati raccolti</h3>
+        <p>Il sito <strong>non raccoglie dati personali</strong> direttamente dagli utenti. Non sono presenti moduli di contatto, login, commenti o newsletter.</p>
+
+        <h3>2. Cookie e tecnologie di tracciamento</h3>
+        <p>Non vengono utilizzati cookie di profilazione, analytics o cookie di terze parti. Solo eventuali cookie tecnici necessari al funzionamento possono essere presenti (es. Cloudflare).</p>
+
+        <h3>3. Hosting e log tecnici</h3>
+        <p>Il sito è ospitato su <strong>Cloudflare Pages</strong>. Cloudflare può raccogliere dati tecnici anonimi (es. IP, browser, orario) per motivi di sicurezza e diagnostica.</p>
+        <p>Consulta la <a href="https://www.cloudflare.com/privacypolicy/" target="_blank">Privacy Policy di Cloudflare</a> per maggiori informazioni.</p>
+
+        <h3>4. Finalità del trattamento</h3>
+        <ul>
+          <li>Garantire il corretto funzionamento del sito</li>
+          <li>Proteggere sicurezza e integrità dei contenuti</li>
+          <li>Analisi anonime aggregate a fini diagnostici</li>
+        </ul>
+
+        <h3>5. Diritti degli interessati</h3>
+        <p>Non essendo prevista la raccolta attiva di dati personali, non vengono conservate informazioni identificative sugli utenti.</p>
+
+        <h3>6. Contatti</h3>
+        <p>Per richieste o chiarimenti puoi scrivere a:</p>
+        <p><em>spacechips@spacechips.it</em></p>
+
+        <p style="margin-top: 2em; font-size: 0.85em;">Ultimo aggiornamento: luglio 2025</p>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const toggle = document.getElementById('toggle-sidebar');
+    const sidebar = document.querySelector('.sidebar');
+    const container = document.querySelector('.hud-container');
+    if (toggle) {
+      toggle.addEventListener('click', () => {
+        container.classList.toggle('collapsed');
+        sidebar.classList.toggle('collapsed');
+      });
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      sidebar?.classList.add('collapsed');
+      container?.classList.add('collapsed');
+    });
+
+    const canvas = document.getElementById("glitch-canvas");
+    const ctx = canvas.getContext("2d");
+
+    function resize() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resize();
+    window.addEventListener("resize", resize);
+
+    function drawGlitch() {
+      const { width, height } = canvas;
+      ctx.clearRect(0, 0, width, height);
+      for (let i = 0; i < 20; i++) {
+        const y = Math.random() * height;
+        const h = Math.random() * 2 + 1;
+        const r = Math.floor(Math.random() * 255);
+        ctx.fillStyle = `rgba(${r},255,255,0.08)`;
+        ctx.fillRect(0, y, width, h);
+      }
+    }
+    setInterval(drawGlitch, 80);
+  </script>
+</body>
+</html>

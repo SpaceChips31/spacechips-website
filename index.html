@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>spacechips@home</title>
+  <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+
+  <meta name="description" content="Benvenuto in Spacechips, operatore. Accedi ai moduli disponibili." />
+  <meta property="og:title" content="spacechips@home" />
+  <meta property="og:description" content="Sistema operativo HUD personale in stile Nier." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://spacechips.it/" />
+  <meta property="og:image" content="/assets/img/spacechips.jpg" />
+
+  <link rel="stylesheet" href="/assets/css/home-style.css" />
+</head>
+<body>
+  <canvas id="glitch-canvas"></canvas>
+
+  <div class="hud-container collapsed">
+    <aside class="sidebar collapsed">
+      <header>
+        <h1>spacechips@home</h1>
+      </header>
+      <nav>
+        <a href="/about-me">About Me</a>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <section class="hud-box">
+        <h2>
+          <span id="toggle-sidebar" class="toggle-symbol">&lt;/&gt;</span>
+          <span class="glitch" data-text="Welcome,">Welcome,</span>
+          <span class="glitch" data-text="Operator.">Operator.</span>
+        </h2>
+        <p>Welcome to Spacechips' system. Select a module to continue.</p>
+        <div class="button-row">
+          <a href="/about-me">About Me</a>
+        </div>
+      </section>
+
+      <section class="hud-box">
+        <h3>Tutorials</h3>
+        <ul>
+          <li>Arch Linux - Installation Guide</li>
+        </ul>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const toggle = document.getElementById('toggle-sidebar');
+    const sidebar = document.querySelector('.sidebar');
+    const container = document.querySelector('.hud-container');
+
+    toggle.addEventListener('click', () => {
+      container.classList.toggle('collapsed');
+      sidebar.classList.toggle('collapsed');
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+      sidebar.classList.add('collapsed');
+      container.classList.add('collapsed');
+    });
+
+    // Glitch canvas effect
+    const canvas = document.getElementById("glitch-canvas");
+    const ctx = canvas.getContext("2d");
+
+    function resize() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resize();
+    window.addEventListener("resize", resize);
+
+    function drawGlitch() {
+	  const { width, height } = canvas;
+	  ctx.clearRect(0, 0, width, height);
+	  for (let i = 0; i < 20; i++) {
+		const y = Math.random() * height;
+		const h = Math.random() * 4 + 1;
+		const r = Math.floor(Math.random() * 255);
+		const g = Math.floor(Math.random() * 255);
+		const b = Math.floor(Math.random() * 255);
+		ctx.fillStyle = `rgba(${r},${g},${b},0.15)`; // più opaco e colorato
+		ctx.fillRect(0, y, width, h);
+	  }
+	}
+    setInterval(drawGlitch, 80);
+  </script>
+</body>
+</html>
