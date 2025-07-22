@@ -5,15 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>spacechips@home</title>
   <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/assets/css/style.css" />
 
-  <meta name="description" content="Benvenuto in Spacechips, operatore. Accedi ai moduli disponibili." />
+  <meta name="description" content="Welcome to the Spacechips' dashboard, Operator." />
   <meta property="og:title" content="spacechips@home" />
-  <meta property="og:description" content="Sistema operativo HUD personale in stile Nier." />
+  <meta property="og:description" content="Welcome to the Spacechips' dashboard, Operator." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://spacechips.it/" />
   <meta property="og:image" content="/assets/img/spacechips.jpg" />
-
-  <link rel="stylesheet" href="/assets/css/home-style.css" />
+  
 </head>
 <body>
   <canvas id="glitch-canvas"></canvas>
@@ -32,25 +32,36 @@
     </aside>
 
     <main class="main">
-      <section class="hud-box">
-        <h2>
-          <span id="toggle-sidebar" class="toggle-symbol">&lt;/&gt;</span>
-          <span class="glitch" data-text="Welcome,">Welcome,</span>
-          <span class="glitch" data-text="Operator.">Operator.</span>
-        </h2>
-        <p>Welcome to Spacechips' system. Select a module to continue.</p>
-        <div class="button-row">
-          <a href="/about-me">About Me</a>
-        </div>
-      </section>
+	  <section class="hud-box">
+		<h2>
+		  <span id="toggle-sidebar" class="toggle-symbol">&lt;/&gt;</span>
+		  <span class="glitch" data-text="Welcome,">Welcome,</span>
+		  <span class="glitch" data-text="Operator.">Operator.</span>
+		</h2>
+		<p>
+		  Spacechips is a modular system containing practical guides, personal projects, and useful tools.  
+		  Here is a list of the current modules:
+		</p>
+		<ul>
+		  <li><strong>About Me</strong> – Learn more about the creator of Spacechips, the background, and ongoing projects.</li>
+		  <li><strong>Tutorials</strong> – Step-by-step instructions and tips on Linux, Blender, and more.</li>
+		  <li><strong>Blog</strong> – Whatever goes through my head.</li>
+		</ul>
 
-      <section class="hud-box">
-        <h3>Tutorials</h3>
-        <ul>
-          <li>Arch Linux - Installation Guide</li>
-        </ul>
-      </section>
-    </main>
+		<p>Select a module to continue.</p>
+
+		<div class="button-row">
+		  <a href="/about-me">About Me</a>
+		</div>
+	  </section>
+
+	  <section class="hud-box">
+		<h3>Tutorials</h3>
+		<ul>
+		  <li>Arch Linux - Installation Guide</li>
+		</ul>
+	  </section>
+	</main>
   </div>
 
   <script>
