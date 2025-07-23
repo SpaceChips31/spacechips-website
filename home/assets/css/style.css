@@ -213,3 +213,19 @@ html, body {
   80% { transform: translate(1px, 1px); }
   100% { transform: translate(0); }
 }
+
+/* --- About Me specific enhancements --- */
+.hud-box p {
+  margin-bottom: 1em;
+  line-height: 1.6;
+}
+
+.hud-box ul {
+  padding-left: 1.5em;
+  margin-bottom: 1em;
+  list-style: disc;
+}
+
+.hud-box ul li {
+  margin-bottom: 0.5em;
+}
