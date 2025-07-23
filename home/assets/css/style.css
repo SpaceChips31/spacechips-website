@@ -16,15 +16,14 @@ html, body {
 }
 
 :root {
-  --color-primary: var(--color-primary);
-  --color-highlight: var(--color-highlight);
-  --color-accent: var(--color-accent);
-  --color-bg: var(--color-bg);
-  --color-text: var(--color-primary);
-  --color-link: var(--color-link);
-  --color-link-hover: var(--color-link-hover);
+  --color-primary: #00ffe5;
+  --color-highlight: #ff00ff;
+  --color-accent: #00ffff;
+  --color-bg: rgba(0, 0, 0, 0.7);
+  --color-text: #00ffe5;
+  --color-link: #88c0d0;
+  --color-link-hover: #a1cfe8;
 }
-
 
 #glitch-canvas {
   position: fixed;
