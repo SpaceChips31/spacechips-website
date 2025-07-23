@@ -1,25 +1,33 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
+
 <head>
-  <title>spacechips@home</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Spacechips@Home</title>
   <meta name="description" content="Welcome to the Spacechips' dashboard, Operator." />
-  <meta property="og:title" content="spacechips@home" />
+  
+  <meta property="og:title" content="Spacechips@Home" />
   <meta property="og:description" content="Welcome to the Spacechips' dashboard, Operator." />
+  <meta property="og:image" content="https://spacechips.it/assets/img/spacechips.jpg" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://spacechips.it/" />
-  <meta property="og:image" content="/assets/img/spacechips.jpg" />
+  
   <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="/assets/css/style.css" />
 </head>
+
 <body>
   <canvas id="glitch-canvas"></canvas>
   <div class="hud-container collapsed">
     <aside class="sidebar collapsed">
       <header>
         <h1>spacechips@home</h1>
-      </header>
+	  </header>
+	  <nav>
+		<a href="https://spacechips.it/about">About Me</a>
+	  <nav>
       <footer class="sidebar-footer">
 		<a href="/privacy.html" class="privacy-link">Privacy Policy</a>
 	  </footer>	 
@@ -42,7 +50,7 @@
 		</ul>
 		<p>Select a module to continue.</p>
 		 <div class="button-row">
-          <a href="https://spacechips.it/about-me">About Me</a>
+          <a href="https://spacechips.it/about">About Me</a>
         </div>
 		</section>
         <section class="hud-box">
@@ -94,5 +102,7 @@
 	}
     setInterval(drawGlitch, 80);
   </script>
+  
 </body>
+
 </html>

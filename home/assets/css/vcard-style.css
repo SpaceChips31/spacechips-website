@@ -4,11 +4,20 @@
   box-sizing: border-box;
 }
 
+:root {
+  --color-primary: var(--color-primary);
+  --color-text: var(--color-text);
+  --color-subtitle: var(--color-subtitle);
+  --color-bg: var(--color-bg);
+  --gradient-main: var(--gradient-main);
+}
+
+
 body {
   height: 100vh;
-  background: #111;
+  background: var(--color-bg);
   font-family: 'Segoe UI', sans-serif;
-  color: #ccc;
+  color: var(--color-text);
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -24,7 +33,7 @@ body {
 }
 
 .about-footer a {
-  color: #00ffe5;
+  color: var(--color-primary);
   text-decoration: none;
 }
 
@@ -69,7 +78,7 @@ body {
 
 .title {
   font-size: 3rem;
-  background: linear-gradient(to right, #ff00c8, #00bfff);
+  background: var(--gradient-main);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;
@@ -77,7 +86,7 @@ body {
 }
 
 .subtitle {
-  color: #aaa;
+  color: var(--color-subtitle);
   font-size: 1.1rem;
   margin-bottom: 1rem;
 }
@@ -86,7 +95,7 @@ body {
   width: 60px;
   height: 4px;
   margin: 0 auto 2rem;
-  background: linear-gradient(to right, #ff00c8, #00bfff);
+  background: var(--gradient-main);
 }
 
 .social {
@@ -121,4 +130,29 @@ body {
 
 .email {
   background-image: url('/assets/img/Mail.svg');
+}
+
+a:focus {
+  outline: 2px dashed var(--color-primary);
+  outline-offset: 2px;
+}
+
+@media (max-width: 600px) {
+  .logo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .icon {
+    width: 40px;
+    height: 40px;
+  }
 }

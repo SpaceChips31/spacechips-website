@@ -3,8 +3,8 @@ html, body {
   padding: 0;
   height: 100%;
   font-family: 'Orbitron', sans-serif;
-  background-color: rgba(0, 0, 0, 0.7);
-  color: #00ffe5;
+  background-color: var(--color-bg);
+  color: var(--color-primary);
   overflow-x: hidden;
 }
 
@@ -14,6 +14,17 @@ html, body {
   font-weight: normal;
   font-style: normal;
 }
+
+:root {
+  --color-primary: var(--color-primary);
+  --color-highlight: var(--color-highlight);
+  --color-accent: var(--color-accent);
+  --color-bg: var(--color-bg);
+  --color-text: var(--color-primary);
+  --color-link: var(--color-link);
+  --color-link-hover: var(--color-link-hover);
+}
+
 
 #glitch-canvas {
   position: fixed;
@@ -43,7 +54,7 @@ html, body {
 .sidebar {
   overflow: hidden;
   background: rgba(0, 255, 229, 0.05);
-  border-right: 1px solid #00ffe5;
+  border-right: 1px solid var(--color-primary);
   padding: 2em 1em;
   height: 100%;
   opacity: 1;
@@ -61,7 +72,7 @@ html, body {
 .sidebar h1 {
   font-size: 1em;
   margin: 0 0 1em;
-  color: #00ffe5;
+  color: var(--color-primary);
   text-transform: uppercase;
 }
 
@@ -69,9 +80,9 @@ html, body {
   display: block;
   margin-bottom: 1em;
   text-decoration: none;
-  color: #00ffe5;
+  color: var(--color-primary);
   padding: 0.3em;
-  border: 1px solid #00ffe5;
+  border: 1px solid var(--color-primary);
   transition: background 0.3s;
 }
 .sidebar nav a:hover {
@@ -86,7 +97,7 @@ html, body {
 }
 
 .sidebar-footer a {
-  color: #00ffe5;
+  color: var(--color-primary);
   text-decoration: none;
   display: block;
   border-top: 1px solid rgba(0,255,229,0.2);
@@ -95,7 +106,7 @@ html, body {
 }
 
 .sidebar-footer a:hover {
-  color: white;
+  color: #ffffff;
   opacity: 1;
 }
 
@@ -106,11 +117,11 @@ html, body {
 }
 
 .hud-box {
-  border: 1px solid #00ffe5;
+  border: 1px solid var(--color-primary);
   padding: 1.5em;
   margin-bottom: 2em;
   background: rgba(0, 255, 229, 0.03);
-  box-shadow: 0 0 10px #00ffe555;
+  box-shadow: 0 0 10px var(--color-primary)55;
 }
 
 .hud-box h2, .hud-box h3 {
@@ -118,8 +129,17 @@ html, body {
   text-transform: uppercase;
 }
 
+a {
+  color: var(--color-link); 
+  text-decoration: underline;
+}
+
+a:hover {
+  color: var(--color-link-hover); 
+}
+
 .hud-box ul li a {
-  color: #00ffff;
+  color: var(--color-accent);
   text-decoration: none;
   transition: color 0.2s;
 }
@@ -132,15 +152,15 @@ html, body {
   margin-right: 1em;
   margin-top: 1em;
   padding: 0.5em 1em;
-  border: 1px solid #00ffe5;
-  color: #00ffe5;
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
   text-decoration: none;
   background: transparent;
   transition: background 0.3s, color 0.3s;
   text-transform: uppercase;
 }
 .button-row a:hover {
-  background: #00ffe5;
+  background: var(--color-primary);
   color: #0a0a0a;
 }
 
@@ -149,7 +169,7 @@ html, body {
   display: inline-block;
   white-space: nowrap;
   overflow: visible;
-  color: #00ffe5;
+  color: var(--color-primary);
   animation: glitch-flicker 3s infinite;
 }
 
@@ -166,11 +186,11 @@ html, body {
 }
 
 .glitch::before {
-  color: #ff00ff;
+  color: var(--color-highlight);
 }
 
 .glitch::after {
-  color: #00ffff;
+  color: var(--color-accent);
   clip-path: inset(50% 0 0 0);
   animation-delay: 1.5s;
 }
@@ -194,7 +214,7 @@ html, body {
 .toggle-symbol {
   cursor: pointer;
   display: inline-block;
-  color: #00ffe5;
+  color: var(--color-primary);
   margin-right: 0.5em;
   position: relative;
   transition: transform 0.1s ease;
@@ -202,7 +222,7 @@ html, body {
 
 .toggle-symbol:hover {
   animation: toggle-glitch 0.3s linear infinite;
-  text-shadow: 1px 0 #ff00ff, -1px 0 #00ffff;
+  text-shadow: 1px 0 var(--color-highlight), -1px 0 var(--color-accent);
 }
 
 @keyframes toggle-glitch {
@@ -228,4 +248,20 @@ html, body {
 
 .hud-box ul li {
   margin-bottom: 0.5em;
+}
+
+
+a:focus {
+  outline: 2px dashed var(--color-primary);
+  outline-offset: 2px;
+}
+
+
+@media (max-width: 768px) {
+  .hud-container {
+    grid-template-columns: 0 1fr !important;
+  }
+  .sidebar {
+    display: none;
+  }
 }
