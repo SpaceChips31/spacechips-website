@@ -68,14 +68,13 @@
     const container = document.querySelector('.hud-container');
 
     toggle.addEventListener('click', () => {
-      container.classList.toggle('collapsed');
-      sidebar.classList.toggle('collapsed');
-    });
-
-    window.addEventListener('DOMContentLoaded', () => {
-      sidebar.classList.add('collapsed');
-      container.classList.add('collapsed');
-    });
+  if (window.innerWidth <= 768) {
+    sidebar.classList.toggle('visible');
+  } else {
+    sidebar.classList.toggle('collapsed');
+    document.querySelector('.hud-container')?.classList.toggle('collapsed');
+  }
+});
 
     const canvas = document.getElementById("glitch-canvas");
     const ctx = canvas.getContext("2d");
